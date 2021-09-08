@@ -17,6 +17,7 @@ namespace FunWithArrays
             ArrayOfObjects();
             RectMultidimensionalArray();
             JaggedMultidimensionalArray();
+            PassAndReceiveArrays();
             Console.ReadLine();
         }
 
@@ -120,6 +121,26 @@ namespace FunWithArrays
             }
             Console.WriteLine();
         }
+        static void PrintArray(int[] myInts)
+        {
+            for (int i = 0; i < myInts.Length; i++)
+                Console.WriteLine("Item {0} is {1}", i, myInts[i]);
+        }
+        static string[] GetStringArray()
+        {
+            string[] theStrings = { "Hello", "from", "GetStringArray" };
+            return theStrings;
+        }
+        static void PassAndReceiveArrays()
+        {
+            Console.WriteLine("=> Arrays as params and return values.");
+            int[] ages = { 20, 22, 23, 0 };
+            PrintArray(ages);
 
+            string[] strs = GetStringArray();
+            foreach (string i in strs)            
+                Console.WriteLine(i);
+            Console.WriteLine();            
+        }
     }
 }
